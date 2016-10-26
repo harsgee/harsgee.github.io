@@ -1,0 +1,336 @@
+*{margin:0;padding:0;}
+a,img{border:0;}
+.clear{
+    clear: both;
+}
+ul{
+    text-decoration: none;
+    list-style-type:none
+}
+input,select,textarea{
+    outline: none;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+.textarea{
+    resize: none;
+}
+.addNavWidth{
+    width: 900px;
+}
+.left_previewNav{
+    position: relative;
+    float: left;
+    display: inline-block;
+    margin: 20px;
+    background: #ffffff;
+    width: 260px;
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+}
+.right_addNav{
+    display: inline-block;
+    margin: 20px 0;
+    top: 0;
+    width: 500px;
+    font-size: 12px;
+}
+.leftArrow1{
+    position: absolute;
+    display: none;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #aaaaaa;
+    right: -10px;
+    z-index: 30;
+    bottom: 5px;
+
+}
+.leftArrow2{
+    position: absolute;
+    display: none;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #fff;
+    right: -11px;
+    bottom: 5px;
+    z-index: 30;
+}
+.downArrow1{
+    position: absolute;
+    display: none;
+    opacity: 0;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-top: 10px solid #aaaaaa;
+    left: 46%;
+    bottom: 50px;
+    z-index: 21;
+}
+.downArrow2{
+    position: absolute;
+    display: none;
+    opacity: 0;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-top: 10px solid #fff;
+    left: 46%;
+    bottom: 51px;
+    z-index: 21;
+}
+
+#addNavMenu{position:absolute;
+    bottom:0px;
+    width:100%;
+    height:44px;
+    line-height:44px;
+    z-index:999;
+    background: #ffffff;
+}
+#addNavMenu ul{
+    position: absolute;
+    list-style-type:none;
+    width:100%;
+    height:100%;;
+    text-align: center;
+    background: #eeeeee;
+    z-index: 20;
+}
+#addNavMenu ul li{
+    display: inline-block;
+    float: left;
+    width:30%;
+    height:100%;
+    text-align:center;
+    position:relative;
+    font-size:12px;
+}
+#addNavMenu ul li+li{
+    border-left: 1px solid #aaaaaa;
+
+}
+#addNavMenu ul li .line{
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:30;}
+#addNavMenu ul li .menu_li{
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:20;
+    width:100%;
+    height:100%;
+    color:#454545;
+    background: #eeeeee;
+}
+#addNavMenu ul li .img_front{
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:30;
+    width:100%;
+    height:100%;
+}
+#addNavMenu ul li .img_front img{
+    width:100%;
+    height:100%;
+}
+#addNavMenu ul li .secondNav{
+    position:absolute;
+    bottom:-300px;left:50%;
+    width:66px;
+    padding: 0 8px;
+    margin-left:-42px;
+    margin-bottom:14px;
+    height:auto;
+    text-align:center;
+    /*z-index:10;*/
+    border: 1px solid #aaaaaa;
+}
+#addNavMenu ul li .secondNav div{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#addNavMenu ul li .secondNav a{
+    float:left;
+    width:100%;
+    height:43px;
+    line-height:43px;
+    color:#454545;
+    text-decoration:none;
+}
+#addNavMenu ul li .secondNav a+a{
+    border-top: 1px solid #aaaaaa;
+}
+
+.footer_front{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:888;
+    display:none;
+}
+
+.ranItem{
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+
+}
+.ranItem+.ranItem{
+    margin-top: 10px;
+}
+.raniUl{
+    position: relative;
+    /*font-size: 14px;*/
+}
+.raniLeft{
+    float: left;
+    width: 145px;
+}
+.raniRight{
+    float: left;
+    margin-left: 8px;
+    width: 200px;
+    margin-top: 10px;
+
+}
+.ranirArea{
+    height: 210px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+}
+.navMenuName{
+    color: #666666;
+}
+.ranilfTitle{
+    position: relative;
+    margin: 5px 0;
+    padding: 5px;
+    z-index: 1;;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    background: #ffffff;
+}
+.ranilftBtn{
+    display: inline-block;
+    float: right;
+}
+.ranilftbj{
+    color: #999;
+    font-size: 12px;
+}
+.addSecondNavBtn,.addFirstNavBtn{
+    font-size: 12px;
+    color: #4373ff;
+}
+
+.addFirstNav{
+    padding: 10px;
+}
+.oneMenuName{
+    font-size: 14px;
+    color: #444444;
+    padding: 0 1px;
+}
+.selectMsgType{
+    width: 100%;
+    margin-top: 6px;
+    color: #444444;
+}
+.smtItem{
+    margin-top: 5px;
+}
+.smtItem textarea{
+    width: 167px;
+    padding: 5px;
+    height: 80px;
+    resize: none;
+}
+.selectMsgType{
+    /*display: none;*/
+}
+.smti_wz{
+    display: none;
+}
+.smti_tw{
+    display: none;
+}
+.smti_link{
+    display: none;
+}
+.smti_link_text{
+    display: none;
+}
+.smti_link_page1{
+    display: none;
+}
+.smti_link_page2{
+    display: none;
+}
+.smti_tw select{
+    width: 100%;
+    color: #444444;
+}
+.smti_link select{
+    width: 100%;
+    color: #444444;
+}
+.ranirArea input{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #444444;
+    /*width: 100%;*/
+    padding: 0 3px;
+}
+.smti_link_page1,.smti_link_page2,.smti_link_page2 select:last-child{
+    margin-top: 5px;
+}
+.ranirArea{
+    position: relative;
+}
+.ranirabcBtn{
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+}
+.rBtn_small{
+    padding: 4px 6px;
+    background: #76cded;
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.tipMsg{
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+.rBtn_small:hover{
+    background: #3da8ed;
+}
+.pc_tsModal{
+    position: fixed;
+    display: none;
+    font-size: 16px;
+    top: 100px;
+    padding: 20px 40px 10px;
+    text-align: center;
+    left: 40%;
+    background: #aad2da;
+    border: 1px solid #3da8ed;
+    z-index: 999;
+}
+.pc_tsmBtn{
+    margin-top: 20px;
+}
+.pc_tsmBtn button{
+    /*background: #3da8ed;*/
+    padding: 2px 6px;
+}
