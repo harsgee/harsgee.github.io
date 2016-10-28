@@ -140,12 +140,9 @@ $(function () {
                     $("#addNavMenu ul li").css("width",(260/$("#addNavMenu ul li").length-1)+"px");
                     if(curNav!=0){
                         curNav = curNav-1;
-                        $("#addNavMenu ul li .menu_li").removeClass("curLi").eq(curNav).addClass("curLi").text(navList[curNav].nav1);
                         if(navList[curNav].nav2.length>0){
                             $(".selectMsgType").css("display","none");
                             $(".smtItem").css("display","none");
-                            $(".raniUl").empty();
-                            $("#jsModal1").tmpl(navList[curNav]).appendTo(".raniUl");
                         }
                         else {
                             $(".selectMsgType").css("display","block");
@@ -154,6 +151,9 @@ $(function () {
                     }else {
                         curNav=0;
                     }
+                    $("#addNavMenu ul li .menu_li").removeClass("curLi").eq(curNav).addClass("curLi").text(navList[curNav].nav1);
+                    $(".raniUl").empty();
+                    $("#jsModal1").tmpl(navList[curNav]).appendTo(".raniUl");
                 }
             }
             $(".pc_tsModal").css("display","none");
@@ -202,7 +202,9 @@ $(function () {
                 if(curNav2!=0){
                     curNav2 -= 1;
                 }else {
-                    curNav2 = -1;
+                    if(navList[curNav].nav2.length==0){
+                        curNav2 = -1;
+                    }
                 }
                 $(".ranilfTitle").css("border-color",del_bgColor).eq(curNav2+1).css("border-color",select_bgColor);
                 $(".leftArrow1").css("display","none").eq(curNav2+1).css("display","block");
@@ -226,13 +228,21 @@ $(function () {
      */
     $(".oneMenuName").change(function () {
         if(curNav2==-1){
-            navList[curNav].nav1 = $(this).val();
-            $("#addNavMenu ul li").eq(curNav).find(".curLi").text($(this).val());
-            $(".liftTitle").eq(0).text($(this).val());
+            if($(this).val().length<=4){
+                navList[curNav].nav1 = $(this).val();
+                $("#addNavMenu ul li").eq(curNav).find(".curLi").text($(this).val());
+                $(".liftTitle").eq(0).text($(this).val());
+            }else {
+                alert("一级菜单名称最多4个字！");
+            }
         }else {
-            navList[curNav].nav2[curNav2] = $(this).val();
-            $("#addNavMenu ul li").eq(curNav).find(".secondNav a").eq(curNav2).text($(this).val());
-            $(".liftTitle").eq(curNav2+1).text($(this).val());
+            if($(this).val().length<=7){
+                navList[curNav].nav2[curNav2] = $(this).val();
+                $("#addNavMenu ul li").eq(curNav).find(".secondNav a").eq(curNav2).text($(this).val());
+                $(".liftTitle").eq(curNav2+1).text($(this).val());
+            }else {
+                alert("二级菜单名称最多4个字！");
+            }
         }
     });
     function initEdit() {
