@@ -9,28 +9,16 @@
 <body>
 <div class="form">
     <form class="xui-form" id="postdata">
-        <input class="xui-input" type="text" name="username" value="1100380231"/>
-        <input class="xui-input" type="password" name="passwd" value="646884775"/>
-        <input class="xui-input" type="password" name="login" value="%B5%C7%A1%A1%C2%BC"/>
+        <input class="xui-input" type="text" name="username"/>
+        <input class="xui-input" type="password" name="passwd"/>
+        <input class="xui-input" type="password" name="login"/>
     </form>
     <div>
         <a class="xui-btn" id="submit">提交</a>
     </div>
 </div>
 <script>
-    $("#submit").click(function () {
-        $.ajax({
-            url:"https://bkjw2.guet.edu.cn/student/public/login.asp",
-            type:"post",
-            data:$("#postdata").serialize(),
-            success:function (data) {
-                console.log(data);
-            },
-            error:function (e) {
-                console.log(e);
-            }
-        })
-    })
+    
 </script>
 </body>
 </html>

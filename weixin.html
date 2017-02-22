@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信添加菜单</title>
+    <link rel="stylesheet" href="css/addNav.css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
+    <script src="js/addNav2.js"></script>
+</head>
+<body>
+<div class="addNavWidth">
+    <img src="images/Apple-iPhone-6-and-iPhone-6-Plus-MOCKUP-PSD_03.png" class="appleImg">
+    <div class="left_previewNav">
+            <div id="addNavMenu">
+                <ul>
+                    <li>
+                        <div class="menu_li curLi">菜单名称</div>
+                        <div class="secondNav">
+                            <a>二级菜单</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_front"></div>
+        </div>
+    <div class="right_addNav">
+        <p class="tipMsg">注：自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。</p>
+        <p class="tipMsg">注：一级菜单最多4个汉字，二级菜单最多7个汉字。</p>
+        <div class="ranItem">
+            <div class="raniLeft">
+                <div class="ranilFirstNav">
+                    <p class="navMenuName">一级菜单：</p>
+                    <div class="ranilfTitle">
+                        <span class="liftTitle">菜单名称</span>
+                        <div class="ranilftBtn">
+                            <span class="ranilftbj">删除</span>
+                        </div>
+                        <span class="leftArrow1"></span>
+                        <span class="leftArrow2"></span>
+                    </div>
+                </div>
+                <div class="ranilFirstNav">
+                    <p class="navMenuName">二级菜单：</p>
+                    <ul class="raniUl">
+                        <li>
+                            <div class="ranilfTitle">
+                                <span class="liftTitle">二级菜单</span>
+                                <div class="ranilftBtn">
+                                    <span class="ranilftbj">删除</span>
+                                </div>
+                                <span class="leftArrow1"></span>
+                                <span class="leftArrow2"></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="addSecondNavBtn">+ 添加二级菜单</a>
+                </div>
+            </div>
+            <div class="raniRight">
+                <div class="ranirArea">
+                    <input type="text" class="oneMenuName" placeholder="菜单名称"/>
+                    <select class="selectMsgType">
+                        <option selected class="def_op">消息类型</option>
+                        <option class="msgType">文字消息</option>
+                        <option class="msgType">图文消息</option>
+                        <option class="msgType">连接网址</option>
+                    </select>
+                    <div class="smtItem">
+                        <div class="smti_wz">
+                            <textarea></textarea>
+                        </div>
+                        <div class="smti_tw">
+                            <select>
+                                <option class="def_op" selected>选择图文消息</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+                        <div class="smti_link">
+                            <select class="select_link_type">
+                                <option class="def_op" selected>选择类型</option>
+                                <option value="外部链接">外部链接</option>
+                                <option value="自定义页面">自定义页面</option>
+                                <option value="新闻列表页面">新闻列表页面</option>
+                                <option value="活动列表页面">活动列表页面</option>
+                            </select>
+                            <div class="slt_ctr">
+                                <div class="smti_link_text">
+                                    <input type="text"/>
+                                </div>
+                                <div class="smti_link_page1">
+                                    <select>
+                                        <option class="def_op" selected>选择自定义页面</option>
+                                        <option>1</option>
+                                    </select>
+                                </div>
+                                <div class="smti_link_page2">
+                                    <select>
+                                        <option class="def_op" selected>选择活动栏目</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                    <select>
+                                        <option class="def_op"  selected>选择活动详情页面</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="ranirabcBtn">
+                <a class="rBtn_small">保存</a>
+            </div>
+        </div>
+        <div class="addFirstNav">
+            <a class="addFirstNavBtn">+ 添加一级菜单</a>
+        </div>
+    </div>
+</div>
+<div class="pc_tsModal">
+    <p>是否确定删除该级菜单？</p>
+    <div class="pc_tsmBtn">
+        <button class="qd_delete">确定</button>
+        <button class="qx_delete">取消</button>
+    </div>
+</div>
+<script type="text/html" id="jsModal1">
+    {{each nav2}}
+    <li>
+        <div class="ranilfTitle">
+            <span class="liftTitle">${$value}</span>
+            <div class="ranilftBtn">
+                <span class="ranilftbj">删除</span>
+            </div>
+            <span class="leftArrow1"></span>
+            <span class="leftArrow2"></span>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script type="text/html" id="jsModal2">
+    <li>
+        <div class="menu_li">菜单名称</div>
+        <div class="secondNav">
+
+        </div>
+    </li>
+</script>
+<script type="text/html" id="jsModal3">
+    <li>
+        <div class="ranilfTitle">
+            <span class="liftTitle">二级菜单</span>
+            <div class="ranilftBtn">
+                <span class="ranilftbj">删除</span>
+            </div>
+            <span class="leftArrow1"></span>
+            <span class="leftArrow2"></span>
+        </div>
+    </li>
+</script>
+
+</body>
+</html>
