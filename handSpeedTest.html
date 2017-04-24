@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js study</title>
+    <script src="js/vue.js"></script>
+
+</head>
+<body>
+<div id="vue1">
+    {{message}}
+</div>
+<div id="vue2">
+    <input type="text" v-model="message"/>
+    <p>{{message}}</p>
+</div>
+<ul id="vue-list">
+    <li v-for="value in list">{{value.text}}</li>
+</ul>
+<ul id="vue3">
+    <item v-for="item in list" v-bind:item="item"></item>
+</ul>
+<div id="app5">
+    <input type="text" v-model="firstName"/>
+    <input type="text" v-model="lastName"/>
+    {{getFullName}}
+    <p>{{isChange}}</p>
+</div>
+<div id="ss">
+    <button style="font-size: 60px" v-on:click="counter += 1" id="btn" v-bind:disabled="isOver">点击</button>
+    <p id="time">倒计时：30</p>
+    <p>点击次数：{{counter}}</p>
+</div>
+<script>
+    var app = new Vue({
+        el:"#vue1",
+        data:{
+            message:"使用vue的第1步"
+        }
+    });
+    var app2 = new Vue({
+        el:"#vue2",
+        data:{
+            message:"vue的数据绑定"
+        }
+    });
+    var app3 = new Vue({
+        el:"#vue-list",
+        data:{
+            list:[
+                {text:"HTML5"},
+                {text:"Javascript"},
+                {text:"NodeJS"},
+                {text:"Vue.js"}
+            ]
+        }
+    });
+    Vue.component("item",{
+        props:['item'],
+        template:'<li>{{item.text}}</li>'
+    });
+    var app4 = new Vue({
+        el:"#vue3",
+        data:{
+            list:[
+                {text:"HTML"},
+                {text:"javascript"},
+                {text:"CSS3"}
+            ]
+        }
+    });
+    var app5 = new Vue({
+        el:"#app5",
+        data:{
+            firstName:"Su",
+            lastName:"san",
+            fullName:"Su san",
+            isChange:"a"
+        },
+        computed:{
+            getFullName:function () {
+                this.fullName = this.firstName+" "+this.lastName;
+                return this.fullName;
+            }
+        },
+        watched:{
+            fullName:function (val) {
+                this.isChange = "名字发生变化了："+ val +Date.now();
+            }
+        }
+    });
+
+    var time = 30;
+    var isF = true;
+    var app6 = new Vue({
+        el: '#ss',
+        data: {
+            counter: 0,
+            isOver:false
+        }
+    });
+    document.getElementById("btn").addEventListener("click",function () {
+        if(time==0){
+            app6.isOver = true;
+        }
+        if(isF){
+            isF = false;
+            setInterval(function () {
+                if(time == 0) return;
+                time -= 1;
+                document.getElementById("time").innerText = "倒计时："+time;
+            },1000);
+        };
+    })
+</script>
+</body>
+</html>
