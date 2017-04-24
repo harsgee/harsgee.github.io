@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>vue.js study</title>
     <script src="js/vue.js"></script>
-
 </head>
 <body>
 <div id="vue1">
@@ -27,7 +27,7 @@
     <p>{{isChange}}</p>
 </div>
 <div id="ss">
-    <button style="font-size: 60px" v-on:click="counter += 1" id="btn" v-bind:disabled="isOver">点击</button>
+    <button style="font-size: 60px;text-align: center" v-on:click="counter += 1" id="btn" v-bind:disabled="isOver">点击</button>
     <p id="time">倒计时：30</p>
     <p>点击次数：{{counter}}</p>
 </div>
