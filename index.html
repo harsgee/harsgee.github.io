@@ -5,21 +5,26 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
 </head>
 <body>
-<div class="form">
-    <form class="xui-form" id="postdata">
-        <input class="xui-input" type="text" name="username"/>
-        <input class="xui-input" type="password" name="passwd"/>
-        <input class="xui-input" type="password" name="login"/>
-    </form>
-    <div>
-        <a class="xui-btn" id="submit">提交</a>
-    </div>
-</div>
-<a href="handSpeedTest.html" style="font-size: 40px">测试手速</a>
+<form enctype="multipart/form-data">
+    <input type="file" name="file"/>
+</form>
 <script>
-
+    $.ajax({
+        url:"",
+        type:"post",
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (e) {
+            console.log(data)
+        }
+    })
 </script>
 </body>
 </html>
