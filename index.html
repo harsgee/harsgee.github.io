@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML5学习之旅</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <title>HTML5入门简解</title>
+    <link rel = "Shortcut Icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">-->
     <script src="js/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
+        html,body{
+            min-width: 376px;
+            height: 100%;
+            -webkit-transition: all .4s;
+            -moz-transition: all .4s;
+            -ms-transition: all .4s;
+            -o-transition: all .4s;
+            transition: all .4s;
+        }
         .fixed-bg{
             position: fixed;
             width: 100%;
@@ -16,23 +27,73 @@
             z-index: -1;
             background-image: url('images/bg_2.jpg');
             background-size: auto 100%;
+            top: 0;
         }
     </style>
+    <script src="js/index.js"></script>
 </head>
 <body>
-<div class="fixed-bg"></div>
-<div class="container">
-    <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#p1">Home</a></li>
-        <li role="presentation"><a href="#p2">Profile</a></li>
-        <li role="presentation"><a href="#p3">Messages</a></li>
-    </ul>
-    <div id="p1">1</div>
-    <div id="p2">2</div>
-    <div id="p3">3</div>
+<!--<div class="fixed-bg"></div>-->
+<div class="page-header_reset navbar-fixed-top">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">简解</a></li>
+            <li role="presentation"><a href="#">样式库</a></li>
+            <li role="presentation"><a href="#">更多学习网址</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container_reset">
+    <div class="container_reset-box">
+        <div class="aside">
+            <ul class="side-nav">
+                <li data-id="h3_intro" class="active">
+                    <p>简介</p>
+                </li>
+                <li class="select-arrow" data-id="h3_html">
+                    <p>HTML</p>
+                </li>
+                <li data-id="h3_css">
+                    <p>CSS</p>
+                </li>
+                <li data-id="h3_js">
+                    <p>javascript</p>
+                </li>
+            </ul>
+        </div>
+        <div class="content-box">
+            <div class="content" id="scroll">
+                <h3 class="active" id="h3_intro">#简介</h3>
+                <div class="content_">
+                    <p>HTML 是用来描述网页的一种语言。它通过使用标记标签来标记内容，使得网页能被浏览器根据标记标签的特性来显示。</p>
+                    <p>HTML 通过标签标记页面内容，然后通过对这些标签进行设置属性和值使得内容能显示不同的效果。</p>
+                    <p></p>
+                    <code class="html"><xmp>
+                        <p>html</p>
+                        <p>html</p>
+                        <p>html</p>
+                        <p>html</p>
+                    </xmp></code>
+                </div>
+                <h3 id="h3_html">HTML</h3>
+                <h3 id="h3_css">CSS</h3>
+                <h3 id="h3_js">javascript</h3>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
-
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+    $(".side-nav li").on("click",function () {
+        $(this).addClass("active").siblings(".active").removeClass("active");
+        var id=$(this).attr("data-id");
+        scroll(id);
+        $("#scroll").find("#"+id).addClass("active").siblings(".active").removeClass("active");
+    });
 </script>
 </body>
 </html>
