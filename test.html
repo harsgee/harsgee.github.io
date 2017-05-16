@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="cp" type="text" value="html"/>
+<button id="copy">复制</button>
+<script>
+    $("#copy").click(function () {
+        var Url2=document.getElementById("cp");
+        Url2.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        alert("已复制好，可贴粘。");
+    })
+</script>
+</body>
+</html>

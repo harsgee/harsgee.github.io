@@ -67,15 +67,21 @@
                 <div class="content_">
                     <p>HTML 是用来描述网页的一种语言。它通过使用标记标签来标记内容，使得网页能被浏览器根据标记标签的特性来显示。</p>
                     <p>HTML 通过标签标记页面内容，然后通过对这些标签进行设置属性和值使得内容能显示不同的效果。</p>
-                    <p></p>
-                    <code class="html"><xmp>
-                        <p>html</p>
-                        <p>html</p>
-                        <p>html</p>
-                        <p>html</p>
-                    </xmp></code>
+                    <p class="margin-top-5">
+                        一个HTML网页就是一个以html为文件后缀名的文档，你可以把它跟word文档相比。</p>
+                    <p class="margin-top-5">
+                        word文档中，你可以设置文字大小、文字颜色、文字粗细、文字斜体、行间距等各种样式。<br/>
+                        HTML 中，你也可以设置这些内容的属性，但是它不像word文档中可以有界面让你设置，而是<br/>
+                        需要你通过一些代码来进行设置。
+                    </p>
+                    <p class="margin-top-5">
+                        一个网页通常由三种内容组成，html + CSS + Javascript；其中，html就相当于word文档之中的内容，文字、图片等；<br/>
+                        CSS就是你对HTML文档的内容进行设置的样式；<br/>
+                        javascript就是实现一些逻辑功能，比如说在网页中，你用鼠标点击一个地方然后出现什么效果。
+                    </p>
                 </div>
                 <h3 id="h3_html">HTML</h3>
+
                 <h3 id="h3_css">CSS</h3>
                 <h3 id="h3_js">javascript</h3>
             </div>
@@ -84,15 +90,13 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
+        $(".side-nav li").on("click",function () {
+            $(this).addClass("active").siblings(".active").removeClass("active");
+            var id=$(this).attr("data-id");
+            scroll(id);
+            $("#scroll").find("#"+id).addClass("active").siblings(".active").removeClass("active");
         });
-    });
-    $(".side-nav li").on("click",function () {
-        $(this).addClass("active").siblings(".active").removeClass("active");
-        var id=$(this).attr("data-id");
-        scroll(id);
-        $("#scroll").find("#"+id).addClass("active").siblings(".active").removeClass("active");
+
     });
 </script>
 </body>

@@ -161,4 +161,8 @@ ul,li{
 .content_{
     max-width: 1200px;
     font-size: 14px;
+    line-height: 2;
+}
+.margin-top-5{
+    margin-top: 5px;
 }
