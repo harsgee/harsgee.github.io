@@ -35,7 +35,6 @@
 <body>
 <!--<div class="fixed-bg"></div>-->
 <div class="header"></div>
-<script>head(0)</script>
 <div class="container_reset">
     <div class="container_reset-box">
         <div class="aside">
@@ -83,6 +82,7 @@
 </div>
 <script>
     $(document).ready(function() {
+        head(0)
         $(".side-nav li").on("click",function () {
             $(this).addClass("active").siblings(".active").removeClass("active");
             var id=$(this).attr("data-id");
