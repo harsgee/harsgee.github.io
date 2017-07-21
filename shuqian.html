@@ -59,15 +59,18 @@
         }
     },1000);
     $('.cpGroup').on('touchstart','.chaopiao',function (e) {
+        e.preventDefault();
         startY=e.touches[0].pageY;
         var that=this;
         $(this).on('touchmove',function (e) {
+            e.preventDefault();
             moveY=e.touches[0].pageY;
             if(moveY<startY){
                 $(that).css({'bottom':52+(startY-moveY),'z-index':2}).siblings().css({'z-index':1});
             }
         });
     }).on('touchend','.chaopiao',function (e) {
+        e.preventDefault();
         var that=this;
         endY=e.changedTouches[0].pageY;
         $(this).off('touchmove');
