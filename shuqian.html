@@ -81,6 +81,7 @@
                     startY=0;
                 }else if(moveY<=0||moveX<=0||moveX>=winWidth){
                     $(that).stop().animate({'bottom':52},100);
+                    startY=0;
                 }
             }
         });
