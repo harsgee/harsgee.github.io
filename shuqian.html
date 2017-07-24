@@ -75,10 +75,10 @@
                     setTimeout(function () {
                         $(that).css({'bottom':52});
                     },300);
+                    $(this).off('touchmove');
                 }else {
                     $(that).stop().animate({'bottom':52},100);
                 }
-                $(this).off('touchmove');
             }
         });
     }).on('touchend','.chaopiao',function (e) {
