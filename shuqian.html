@@ -53,6 +53,7 @@
     var startY,endY,moveY,moveX,count=0;
     var timeStart=30;
     var winWidth=$(document.body).width();
+    console.log(winWidth)
     setInterval(function () {
         if(timeStart>0){
             timeStart--;
@@ -62,31 +63,26 @@
     $('.cpGroup').on('touchstart','.chaopiao',function (e) {
         e.preventDefault();
         startY=e.touches[0].pageY;
-        var that=this;
-        $(this).on('touchmove',function (e) {
-            e.preventDefault();
-            moveY=e.touches[0].pageY;
-            moveX=e.touches[0].pageX;
-            if(moveY<startY){
-                $(that).css({'bottom':52+(startY-moveY),'z-index':2}).siblings().css({'z-index':1});
-                // ios8下手指离开webview  无法触发touchend事件但可以触发touchmove 可以通过 该事件判断手指位置实现touchend的功能。
-                if((moveY<=0||moveX<=0||moveX>=winWidth)&&startY-moveY>100){
-                    count++;
-                    $('#count').html('&yen;'+count*100);
-                    $(that).animate({'bottom':'105%'},200);
-                    startY=0;
-                    setTimeout(function () {
-                        $(that).off('touchmove');
-                        $(that).css({'bottom':52});
-                    },300);
-                }else {
-                    if(moveY<=0||moveX<=0||moveX>=winWidth){
-                        $(that).animate({'bottom':52},100);
-                        startY=0;
-                    }
-                }
+    }).on('touchmove','.chaopiao',function (e) {
+        e.preventDefault();
+        var that = this;
+        moveY=e.touches[0].pageY;
+        moveX=e.touches[0].pageX;
+        if(moveY<startY){
+            $(that).css({'bottom':52+(startY-moveY),'z-index':2}).siblings().css({'z-index':1});
+// ios8下手指离开webview  无法触发touchend事件但可以触发touchmove 可以通过 该事件判断手指位置实现touchend的功能。
+            if((moveY<=0||moveX<=0||moveX>=winWidth)&&startY-moveY>100){
+                count++;
+                $('#count').html('&yen;'+count*100);
+                $(that).animate({'bottom':'105%'},200);
+                setTimeout(function () {
+                    $(that).css({'bottom':52});
+                },300);
+                startY=0;
+            }else if(moveY<0||moveX<=0||moveX>=winWidth){
+                $(that).stop().animate({'bottom':52},100);
             }
-        });
+        }
     }).on('touchend','.chaopiao',function (e) {
         e.preventDefault();
         var that=this;
