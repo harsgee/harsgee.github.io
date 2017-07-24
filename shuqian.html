@@ -53,7 +53,7 @@
     var startY,endY,moveY,moveX,count=0;
     var timeStart=30;
     var winWidth=$(document.body).width();
-    console.log(winWidth)
+    var winHeight=$(document.body).height()+10;
     setInterval(function () {
         if(timeStart>0){
             timeStart--;
@@ -74,7 +74,7 @@
             if((moveY<=0||moveX<=0||moveX>=winWidth)&&startY-moveY>100){
                 count++;
                 $('#count').html('&yen;'+count*100);
-                $(that).animate({'bottom':'105%'},200);
+                $(that).animate({'bottom':winHeight},200);
                 setTimeout(function () {
                     $(that).css({'bottom':52});
                 },300);
@@ -91,10 +91,9 @@
         if(startY-endY>100&&startY>0){
             count++;
             $('#count').html('&yen;'+count*100);
-            $(that).animate({'bottom':'105%'},200);
+            $(that).animate({'bottom':winHeight},200);
             setTimeout(function () {
                 $(that).css({'bottom':52});
-                alert(1)
             },300);
         }else if(startY>0){
             $(that).animate({'bottom':52},100);
