@@ -96,7 +96,7 @@
             setTimeout(function () {
                 $(that).css({'bottom':52});
             },300);
-        }else {
+        }else if(startY>0){
             $(that).stop().animate({'bottom':52},100);
         }
     });
