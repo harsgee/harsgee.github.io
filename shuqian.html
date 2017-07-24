@@ -76,7 +76,7 @@
                         $(that).css({'bottom':52});
                     },300);
                     $(this).off('touchmove');
-                }else {
+                }else if(moveY<=5){
                     $(that).stop().animate({'bottom':52},100);
                 }
             }
