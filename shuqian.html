@@ -50,8 +50,9 @@
 </div>
 
 <script>
-    var startY,endY,moveY,count=0;
+    var startY,endY,moveY,moveX,count=0;
     var timeStart=30;
+    var winWidth=$(document.body).width();
     setInterval(function () {
         if(timeStart>0){
             timeStart--;
@@ -65,10 +66,11 @@
         $(this).on('touchmove',function (e) {
             e.preventDefault();
             moveY=e.touches[0].pageY;
+            moveX=e.touches[0].pageX;
             if(moveY<startY){
                 $(that).css({'bottom':52+(startY-moveY),'z-index':2}).siblings().css({'z-index':1});
                 // ios8下手指离开webview  无法触发touchend事件但可以触发touchmove 可以通过 该事件判断手指位置实现touchend的功能。
-                if(moveY<=0&&startY-moveY>100){
+                if((moveY<=0||moveX<=0||moveX>=winWidth)&&startY-moveY>100){
                     count++;
                     $('#count').html('&yen;'+count*100);
                     $(that).animate({'bottom':'105%'},200);
@@ -77,7 +79,7 @@
                     },300);
                     $(this).off('touchmove');
                     startY=0;
-                }else if(moveY<=0){
+                }else if(moveY<=0||moveX<=0||moveX>=winWidth){
                     $(that).stop().animate({'bottom':52},100);
                 }
             }
@@ -87,7 +89,7 @@
         var that=this;
         endY=e.changedTouches[0].pageY;
         $(this).off('touchmove');
-        if(startY-endY>100){
+        if(startY-endY>100&&startY>0){
             count++;
             $('#count').html('&yen;'+count*100);
             $(that).animate({'bottom':'105%'},200);
