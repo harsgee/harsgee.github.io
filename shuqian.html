@@ -29,7 +29,7 @@
 </div>
 <div class="chaopiaoBG">
     <div class="cp-head">
-        1倒计时：<span class="cp-time" id="cpTime">30</span>
+        2倒计时：<span class="cp-time" id="cpTime">30</span>
     </div>
     <div class="gold"></div>
     <div class="mask"></div>
@@ -94,6 +94,7 @@
             $(that).animate({'bottom':'105%'},200);
             setTimeout(function () {
                 $(that).css({'bottom':52});
+                alert(1)
             },300);
         }else if(startY>0){
             $(that).animate({'bottom':52},100);
