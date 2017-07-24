@@ -29,7 +29,7 @@
 </div>
 <div class="chaopiaoBG">
     <div class="cp-head">
-        2倒计时：<span class="cp-time" id="cpTime">30</span>
+        倒计时：<span class="cp-time" id="cpTime">30</span>
     </div>
     <div class="gold"></div>
     <div class="mask"></div>
@@ -54,52 +54,59 @@
     var timeStart=30;
     var winWidth=$(document.body).width();
     var winHeight=$(document.body).height()+10;
-    setInterval(function () {
+// 倒计时================
+    var timeCount=setInterval(function () {
         if(timeStart>0){
             timeStart--;
             $('#cpTime').text(timeStart)
+        }else {
+            clearInterval(timeCount);
+            $('.cpGroup').off('touchstart','.chaopiao',touchStart).off('touchmove','.chaopiao',touchMove).off('touchend','.chaopiao',touchEnd);
+            $('.chaopiao').stop().animate({'bottom':52},100);
         }
     },1000);
-    $('.cpGroup').on('touchstart','.chaopiao',function (e) {
-        e.preventDefault();
-        startY=e.touches[0].pageY;
-    }).on('touchmove','.chaopiao',function (e) {
-        e.preventDefault();
-        var that = this;
-        moveY=e.touches[0].pageY;
-        moveX=e.touches[0].pageX;
-        if(moveY<startY){
-            $(that).css({'bottom':52+(startY-moveY),'z-index':2}).siblings().css({'z-index':1});
+    $('.cpGroup').on('touchstart','.chaopiao',touchStart).on('touchmove','.chaopiao',touchMove).on('touchend','.chaopiao',touchEnd);
+function touchStart(e) {
+    e.preventDefault();
+    startY=e.touches[0].pageY;
+}
+function touchMove(e) {
+    e.preventDefault();
+    var that = this;
+    moveY=e.touches[0].pageY;
+    moveX=e.touches[0].pageX;
+    if(moveY<startY){
+        $(that).css({'bottom':52+(startY-moveY),'z-index':2}).siblings().css({'z-index':1});
 // ios8下手指离开webview  无法触发touchend事件但可以触发touchmove 可以通过 该事件判断手指位置实现touchend的功能。
-            if((moveY<=0||moveX<=0||moveX>=winWidth)&&startY-moveY>100){
-                count++;
-                $('#count').html('&yen;'+count*100);
-                $(that).animate({'bottom':winHeight},200);
-                setTimeout(function () {
-                    $(that).css({'bottom':52});
-                },300);
-                startY=0;
-            }else if(moveY<0||moveX<=0||moveX>=winWidth){
-                $(that).stop().animate({'bottom':52},100);
-            }
-        }
-    }).on('touchend','.chaopiao',function (e) {
-        e.preventDefault();
-        var that=this;
-        endY=e.changedTouches[0].pageY;
-        $(this).off('touchmove');
-        if(startY-endY>100&&startY>0){
+        if((moveY<=0||moveX<=0||moveX>=winWidth)&&startY-moveY>100){
             count++;
             $('#count').html('&yen;'+count*100);
             $(that).animate({'bottom':winHeight},200);
             setTimeout(function () {
                 $(that).css({'bottom':52});
             },300);
-        }else if(startY>0){
-            $(that).animate({'bottom':52},100);
+            startY=0;
+        }else if(moveY<0||moveX<=0||moveX>=winWidth){
+            $(that).stop().animate({'bottom':52},100);
         }
-    });
-
+    }
+}
+function touchEnd(e) {
+    e.preventDefault();
+    var that=this;
+    endY=e.changedTouches[0].pageY;
+    $(this).off('touchmove');
+    if(startY-endY>100&&startY>0){
+        count++;
+        $('#count').html('&yen;'+count*100);
+        $(that).animate({'bottom':winHeight},200);
+        setTimeout(function () {
+            $(that).css({'bottom':52});
+        },300);
+    }else if(startY>0){
+        $(that).animate({'bottom':52},100);
+    }
+}
 </script>
 </body>
 </html>
