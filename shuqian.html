@@ -80,7 +80,7 @@
                     $(this).off('touchmove');
                     startY=0;
                 }else if(moveY<=0||moveX<=0||moveX>=winWidth){
-                    $(that).stop().animate({'bottom':52},100);
+                    $(that).animate({'bottom':52},100);
                     startY=0;
                 }
             }
@@ -98,7 +98,7 @@
                 $(that).css({'bottom':52});
             },300);
         }else if(startY>0){
-            $(that).stop().animate({'bottom':52},100);
+            $(that).animate({'bottom':52},100);
         }
     });
 
