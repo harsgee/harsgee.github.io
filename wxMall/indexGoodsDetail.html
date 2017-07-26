@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>微信商城-商品详情</title>
+    <link rel="stylesheet" href="dist/weui/weui.min.css">
+    <link rel="stylesheet" href="dist/weui/jquery-weui.min.css">
+    <script src="dist/weui/jquery-2.1.4.js"></script>
+    <script src="dist/weui/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/wxMall.css">
+    <script src="dist/weui/jquery-weui.min.js"></script>
+    <script src="js/wxMall.js"></script>
+</head>
+<body>
+<div class="page" style="padding-bottom: 93px;">
+    <div class="page-content">
+        <div class="page-content_scroll">
+            <div class="swiper-container" id="headImgs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active"><img src="image/ic_beijing.png" alt=""></div>
+                    <div class="swiper-slide active"><img src="image/ic_beijing.png" alt=""></div>
+                    <div class="swiper-slide active"><img src="image/ic_beijing.png" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="goodsDetail-msg">
+                <p class="goodsDetail-title">商品标题</p>
+                <div class="goodsDetail-price">&yen;<span style="font-size: 18px;">138</span>
+                    <span class="del small-gray-text">原价：&yen;158</span>
+                    <span class="small-gray-text" style="float: right;">月销：15件</span>
+                </div>
+            </div>
+            <div class="goodsDetail-services clear-fix">
+                <span>包邮</span>
+                <span>七天无理由退换</span>
+                <span>正品保证</span>
+            </div>
+            <div class="rich-text">
+                商品详细---------
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="weui-flex">
+            <div class="weui-flex__item">
+                <div class="goodsDetail-foot" onclick="location.href='trolley.html'">
+                    <img src="image/ic_gouwuche96x96.png" alt="">
+                </div>
+                <div class="goodsDetail-foot">
+                    <div class="love-default"></div>
+                    <!--<div class="love-default my-love"></div>-->
+                </div>
+            </div>
+            <div class="weui-flex__item">
+                <p class="goodsDetail-foot-t t1">加入购物车</p>
+            </div>
+            <div class="weui-flex__item">
+                <p class="goodsDetail-foot-t t2">立即购买</p>
+            </div>
+        </div>
+    </div>
+    <div class="hy-popup" id="selectGoods">
+        <div class="hy-popup-container">
+            <div class="popup-title"><p>标题</p> <span class="close-popup">关闭</span></div>
+            <div class="hy-popup-content">
+                <p class="gray-text">库存：1506件</p>
+                <div class="goodsSelect">
+                    <p class="title">颜色：</p>
+                    <span class="selected">红色</span>
+                    <span>天蓝色</span>
+                    <span>白色</span>
+                    <span>黑色</span>
+                </div>
+                <div class="goodsSelect">
+                    <p class="title">大小：</p>
+                    <span>150</span>
+                    <span>160</span>
+                    <span>170</span>
+                    <span>180</span>
+                </div>
+            </div>
+            <div class="hy-popup-foot">
+                <button class="hy-popup_btn">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        //轮播图
+        var mySwiper = new Swiper('#headImgs', {
+            autoplay: 5000,//可选选项，自动滑动
+            pagination : '.swiper-pagination'
+        });
+
+        //返回顶部  返回上一页
+        $(".page-content_scroll").hyBackTop().hyBackPrepage();
+
+        //打开弹框
+        $('.goodsDetail-foot-t').HYPopup({
+            popupId:'selectGoods',
+            onOpen:function () {
+                console.log(1);
+            }
+        });
+        //选择商品
+        $('.goodsSelect').on('click','span',function () {
+            if(!$(this).hasClass('selected')){
+                $(this).addClass('selected').siblings('.selected').removeClass('selected');
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>微信商城</title>
+    <link rel="stylesheet" href="dist/weui/weui.min.css">
+    <link rel="stylesheet" href="dist/weui/jquery-weui.min.css">
+    <script src="dist/weui/jquery-2.1.4.js"></script>
+    <script src="dist/weui/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/wxMall.css">
+    <script src="dist/weui/jquery-weui.min.js"></script>
+    <script src="js/wxMall.js"></script>
+</head>
+<body>
+<div class="page" style="padding: 43px 0 0;">
+    <div class="header order">
+        <div class="swiper-container" id="headMenu">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide active" data-value="0">全部</div>
+                <div class="swiper-slide" data-value="1">待付款</div>
+                <div class="swiper-slide" data-value="2">待发货</div>
+                <div class="swiper-slide" data-value="3">待收货</div>
+                <div class="swiper-slide" data-value="3">退货/退款</div>
+                <div class="swiper-slide" data-value="3">已取消</div>
+                <div class="swiper-slide" data-value="3">已完成</div>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="page-content_scroll">
+
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">订单号：123456789</div>
+                    <div class="weui-cell__ft">未支付</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd wx-mall_img">
+                        <img src="image/ic_beijing.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd wx-mall_content">
+                        <p class="wx-mall_title">商品标题商品标题商品标题商品标题商品标题</p>
+                        <div class="wx-mall_price">
+                            <p class="gray-text">数量：×1 <span class="od-gt">白色</span><span class="od-gt">165cm</span></p>
+                            <p class="now-price">&yen;<span>68</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd wx-mall_img">
+                        <img src="image/ic_beijing.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd wx-mall_content">
+                        <p class="wx-mall_title">商品标题商品标题商品标题商品标题商品标题</p>
+                        <div class="wx-mall_price">
+                            <p class="gray-text">数量：×1 <span class="od-gt">白色</span><span class="od-gt">165cm</span></p>
+                            <p class="now-price">&yen;<span>68</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-btns text-right">
+                    <button class="ui-btn-mini">取消订单</button>
+                    <button class="ui-btn-mini ui-btn-yellow">立即支付</button>
+                </div>
+            </div>
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">订单号：123456789</div>
+                    <div class="weui-cell__ft">待收货</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd wx-mall_img">
+                        <img src="image/ic_beijing.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd wx-mall_content">
+                        <p class="wx-mall_title">商品标题商品标题商品标题商品标题商品标题</p>
+                        <div class="wx-mall_price">
+                            <p class="gray-text">数量：×1 <span class="od-gt">白色</span><span class="od-gt">165cm</span></p>
+                            <p class="now-price">&yen;<span>68</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-btns text-right">
+                    <button class="ui-btn-mini ui-btn-green">查看物流</button>
+                    <button class="ui-btn-mini ui-btn-blue">再次购买</button>
+                </div>
+            </div>
+            <p class="list-bottom">到底了</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        //        返回顶部  上一页
+        $(".page-content_scroll").hyBackTop().hyBackPrepage();
+        //头部滚动导航
+        var menu = new Swiper('#headMenu', {
+            freeMode:true,
+            freeModeSticky:true,
+            slidesPerView:'auto',
+        });
+
+        //头部导航切换  动态请求数据
+        $('.header').on('click','.swiper-slide',function () {
+            $(this).addClass('active').siblings('.active').removeClass('active');
+        });
+    }
+</script>
+</body>
+</html>

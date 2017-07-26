@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>微信商城</title>
+    <link rel="stylesheet" href="dist/weui/weui.min.css">
+    <link rel="stylesheet" href="dist/weui/jquery-weui.min.css">
+    <script src="dist/weui/jquery-2.1.4.js"></script>
+    <script src="dist/weui/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/wxMall.css">
+    <script src="dist/weui/jquery-weui.min.js"></script>
+    <script src="js/wxMall.js"></script>
+</head>
+<body>
+<div class="page" style="padding: 0 0 50px;">
+
+    <!--  排序 分类-->
+    <div class="page-content">
+        <div class="page-content_scroll">
+            <div class="swiper-container" id="headImgs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active"><img src="image/ic_beijing.png" alt=""></div>
+                    <div class="swiper-slide active"><img src="image/ic_beijing.png" alt=""></div>
+                    <div class="swiper-slide active"><img src="image/ic_beijing.png" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="t-search" onclick="location.href='indexSearch.html'">
+                    <span class="weui-icon-search"></span>
+                    <p>搜索商品</p>
+                </div>
+            </div>
+
+            <div class="hot-menu">
+                <div class="swiper-container" id="hotMenu">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/hot-menu_1.png" alt="">
+                            <p>精品家具</p>
+                        </div>
+                        <div class="swiper-slide" data-value="1">
+                            <img src="image/hot-menu_1.png" alt="">
+                            <p>厨卫安装</p>
+                        </div>
+                        <div class="swiper-slide" data-value="2">
+                            <img src="image/hot-menu_1.png" alt="">
+                            <p>墙面地面</p>
+                        </div>
+                        <div class="swiper-slide" data-value="3">
+                            <img src="image/hot-menu_1.png" alt="">
+                            <p>灯具安装</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-list">
+                <div class="swiper-container" id="hotList">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+                        <div class="swiper-slide active" data-value="0">
+                            <img src="image/ic_moren_gray_252x252.png" alt="">
+                            <p class="hot-gName">精品家具精品家具精品家具精品家具</p>
+                            <p class="hot-gPrice"><span>&yen;</span>6500.00</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="index-filter" style="display: none;">
+                <div class="filter-item sort-item active"><p>上新</p></div>
+                <div class="filter-item sort-aitem"><p>热销</p></div>
+                <div class="filter-item sort-item"><p>价格 <i class="hy-ico-sort"></i></p></div>
+                <div class="filter-item filter-type_btn">
+                    <p>全部分类</p>
+                </div>
+            </div>
+            <div class="headMenu" style="background-color: #fff;padding: 0 15px;">
+                <div class="swiper-container" id="headMenu">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide active" data-value="0">推荐</div>
+                        <div class="swiper-slide" data-value="1">护肤</div>
+                        <div class="swiper-slide" data-value="2">彩妆</div>
+                        <div class="swiper-slide" data-value="3">护理</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells" id="list">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd wx-mall_img">
+                        <img src="image/ic_beijing.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd wx-mall_content">
+                        <p class="wx-mall_title">商品标题商品标题商品标题商品标题商品标题</p>
+                        <div class="wx-mall_price">
+                            <span class="del">&yen;108</span>
+                            <p class="now-price">&yen;<span>68</span></p>
+                        </div>
+                        <div class="wx-mall_heat">
+                            <p class="wx-mall_love">1080</p>
+                            <p class="small-gray-text">月销：56件</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd wx-mall_img">
+                        <img src="image/ic_beijing.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd wx-mall_content">
+                        <p>商品标题商品标题商品标题商品标题商品标题</p>
+                        <div class="wx-mall_price">
+                            <span class="del">&yen;108</span>
+                            <p class="now-price">&yen;<span>68</span></p>
+                        </div>
+                        <div class="wx-mall_heat">
+                            <p class="wx-mall_love">1080</p>
+                            <p class="small-gray-text">月销：56件</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd wx-mall_img">
+                        <img src="image/ic_beijing.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd wx-mall_content">
+                        <p>商品标题商品标题商品标题商品标题商品标题</p>
+                        <div class="wx-mall_price">
+                            <span class="del">&yen;108</span>
+                            <p class="now-price">&yen;<span>68</span></p>
+                        </div>
+                        <div class="wx-mall_heat">
+                            <p class="wx-mall_love">1080</p>
+                            <p class="small-gray-text">月销：56件</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd wx-mall_img">
+                        <img src="image/ic_beijing.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd wx-mall_content">
+                        <p>商品标题商品标题商品标题商品标题商品标题</p>
+                        <div class="wx-mall_price">
+                            <span class="del">&yen;108</span>
+                            <p class="now-price">&yen;<span>68</span></p>
+                        </div>
+                        <div class="wx-mall_heat">
+                            <p class="wx-mall_love">1080</p>
+                            <p class="small-gray-text">月销：56件</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+        <div class="backdrop"></div>
+    </div>
+    <div class="footer"></div>
+</div>
+
+<script>
+    hyPage.foot('index');
+    window.onload = function () {
+//        推荐滚动导航
+        var hotMenu = new Swiper('#hotMenu', {
+            freeMode:true,
+            freeModeSticky:true,
+            slidesPerView:'auto',
+            watchSlidesProgress:true,
+            watchSlidesVisibility:true,
+            onTap:function () {
+                hotList.slideTo(hotMenu.clickedIndex*3);
+            }
+        });
+        var hotList = new Swiper('#hotList', {
+//            freeMode:true,
+//            freeModeSticky:true,
+//            pagination : '.swiper-pagination',
+            slidesPerView:3,
+            slidesPerGroup:3,
+            onSlideChangeStart:function () {
+                $('#hotMenu .active').removeClass('active');
+                var active = $('#hotMenu .swiper-slide').eq(hotList.activeIndex/3).addClass('active');
+                if(!active.hasClass('.swiper-slide-visible')){
+                    if(active.index()>hotMenu.activeIndex){
+                        var thum = Math.floor(hotMenu.width/active.width())-1;
+                        hotMenu.slideTo(active.index()-thum);
+                    }
+                }
+            }
+        });
+        //分类滚动导航
+        var menu = new Swiper('#headMenu', {
+            freeMode:true,
+            freeModeSticky:true,
+            slidesPerView:'auto',
+            onTap:function (e) {
+                $('#headMenu .active').removeClass('active');
+                $('#headMenu .swiper-slide').eq(e.clickedIndex).addClass('active');
+            }
+        });
+        //轮播图
+        var mySwiper = new Swiper('#headImgs', {
+            autoplay: 5000,//可选选项，自动滑动
+            pagination : '.swiper-pagination',
+        });
+
+        //初始化滚动加载
+        var loading = false;  //状态标记
+        $(".page-content_scroll").infinite().on("infinite", function() {
+            if(loading) return;
+            loading = true;
+            setTimeout(function() {
+                for(var i=0;i<5;i++)
+                    $("#list").append(
+                            '<div class="weui-cell"><div class="weui-cell__hd wx-mall_img"><img src="image/ic_beijing.png" alt=""></div>' +
+                            '<div class="weui-cell__bd wx-mall_content"><p>商品标题商品标题商品标题商品标题商品标题</p><div class="wx-mall_price">' +
+                            '<span class="del">&yen;108</span><p class="now-price">&yen;<span>68</span></p></div><div class="wx-mall_heat">' +
+                            '<p class="wx-mall_love">1080</p><p class="small-gray-text">月销：56件</p></div></div>');
+                loading = false;
+            }, 1500);   //模拟延迟
+        }).hyBackTop();//返回顶部
+
+        //分类 排序
+        $('.index-filter').on('click','.sort-item',function () {
+            $(this).siblings('.active').removeClass('active').find('.hy-ico-sort').removeClass('up').removeClass('down');
+            $(this).addClass('active');
+            var sort = $(this).find('.hy-ico-sort');
+            if(sort.length>0){
+                if(sort.hasClass('up')){
+                    sort.removeClass('up').addClass('down');
+                }else {
+                    sort.removeClass('down').addClass('up');
+                }
+            }
+        });
+        //分类插件
+        $('.filter-type_btn').filterSelect({
+            items:[
+                {text:'套装',value:'1'},
+                {text:'面膜',value:'2'},
+                {text:'洁面',value:'3'},
+                {text:'单品',value:'4'},
+                {text:'眼部',value:'5'}
+            ],
+            onSelected:function (data) {
+                console.log(data);
+            }
+        });
+        //头部导航切换  动态请求数据
+        $('.header').on('click','.swiper-slide',function () {
+            $(this).addClass('active').siblings('.active').removeClass('active');
+            if($(this).attr('data-value')=='0'){
+                $("#headImgs").css('display','block');
+                $('.index-filter').css('display','none');
+            }else {
+                $("#headImgs").css('display','none');
+                $('.index-filter').css('display','flex');
+                if($(this).attr('data-value')=='1'){
+                    //分类插件  设置新数据
+                    $('.filter-type_btn').filterSelect('setValue', [
+                        {text:'护肤1',value:'1'},
+                        {text:'护肤2',value:'2'},
+                        {text:'护肤3',value:'3'}
+                    ]);
+                }else if($(this).attr('data-value')=='2'){
+                    //分类插件  设置新数据
+                    $('.filter-type_btn').filterSelect('setValue', [
+                        {text:'彩妆1',value:'1'},
+                        {text:'彩妆2',value:'2'},
+                        {text:'彩妆3',value:'3'}
+                    ]);
+                }else if($(this).attr('data-value')=='3'){
+                    //分类插件  设置新数据
+                    $('.filter-type_btn').filterSelect('setValue', [
+                        {text:'护理1',value:'1'},
+                        {text:'护理2',value:'2'},
+                        {text:'护理3',value:'3'}
+                    ]);
+                }
+            }
+        });
+
+        //商品详情
+        $('#list').on('click','.weui-cell',function () {
+            location.href = 'indexGoodsDetail.html';
+        });
+    }
+</script>
+</body>
+</html>
